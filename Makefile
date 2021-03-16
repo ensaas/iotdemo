@@ -2,7 +2,8 @@ TARGET := iotdemo
 SRCDIR := $(PWD)
 CC := go
 
-REPO := registry.cn-shanghai.aliyuncs.com/advantech-k8s/
+#REPO := registry.cn-shanghai.aliyuncs.com/advantech-k8s/
+REPO := harbor.arfa.wise-paas.com/iotdemo/
 TAG := v1.0.0
 FLAGS := -ldflags "-s -w"
 
