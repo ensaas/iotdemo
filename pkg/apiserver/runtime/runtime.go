@@ -85,6 +85,11 @@ func AdvjwtAuthentication(req *restful.Request, resp *restful.Response, chain *r
 	}
 	fmt.Printf("user name: %s\n", info.Username)
 	//TODO permission check
+	if info.Username == "" {
+		LOG.Error("get user name fail :", err)
+		resp.WriteError(http.StatusUnauthorized, fmt.Errorf("Not Authorized"))
+		return
+	}
 	//
 	chain.ProcessFilter(req, resp)
 }

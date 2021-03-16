@@ -24,10 +24,15 @@ func AddWebService() error {
 	ws := runtime.NewWebService()
 
 	//get status
-	ws.Route(ws.GET("/status").To(iotdemo.GetStatus)).Doc("Get the iotdemo server status")
+	ws.Route(ws.GET("/status").To(iotdemo.GetStatus).
+		Doc("Get the iotdemo server status").
+		Returns(http.StatusOK, RespOK, iotdemo.OutputsResult{}))
 
-	ws.Route(ws.GET("/ssostatus").To(iotdemo.GetAuthStatus)).Doc("Get the iotdemo server status").Filter(runtime.AdvjwtAuthentication)
-
+	//get sso status
+	ws.Route(ws.GET("/ssostatus").To(iotdemo.GetAuthStatus).
+		Filter(runtime.AdvjwtAuthentication).
+		Doc("Get sso status").
+		Returns(http.StatusOK, RespOK, iotdemo.OutputsResult{}))
 
 	LOG.Info("add rest router end")
 	restful.DefaultContainer.Add(ws)
