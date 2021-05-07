@@ -1,0 +1,6 @@
+# github.com/influxdata/influxdb v1.8.5
+github.com/influxdata/influxdb/client/v2
+github.com/influxdata/influxdb/models
+github.com/influxdata/influxdb/pkg/escape
+# github.com/streadway/amqp v1.0.0
+github.com/streadway/amqp
