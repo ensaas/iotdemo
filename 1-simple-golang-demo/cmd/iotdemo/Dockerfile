@@ -12,8 +12,6 @@ COPY ./module/ ./module/
 
 COPY ./docs/ ./docs/
 
-COPY ./test/ ./test/
-
 COPY ./go.mod ./go.mod
 
 ENV GO111MODULE on
